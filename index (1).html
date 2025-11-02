@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>نموذج بيانات التطريز</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body dir="rtl">
+  <main class="container">
+    <h1>نموذج بيانات عمل التطريز</h1>
+
+    <form id="embForm">
+      <label>1. مكان التطريز
+        <select id="embroideryLocation" required>
+          <option value="">اختر...</option>
+          <option>صدر</option>
+          <option>ظهر</option>
+          <option>كم</option>
+          <option>جيب</option>
+          <option>طوق</option>
+          <option>مخصص</option>
+        </select>
+      </label>
+
+      <label>2. طريقة التطريز
+        <select id="embroideryMethod" required>
+          <option value="">اختر...</option>
+          <option>آلي (Machine)</option>
+          <option>يدوي</option>
+          <option>تطريز رقمي</option>
+        </select>
+      </label>
+
+      <label>3. عدد الغرز
+        <input type="number" id="stitchCount" min="0" placeholder="مثلاً 15000" required>
+      </label>
+
+      <label>4. كثافة الغرزة
+        <select id="stitchDensity" required>
+          <option value="">اختر...</option>
+          <option value="low">قليلة</option>
+          <option value="medium">متوسطة</option>
+          <option value="high">عالية</option>
+        </select>
+      </label>
+
+      <label>5. لون الغرزة
+        <input type="color" id="threadColor" value="#000000" required>
+      </label>
+
+      <label>6. شكل الغرزة المطلوب
+        <select id="stitchShape" required>
+          <option value="">اختر...</option>
+          <option>satin (ساتان)</option>
+          <option>running (خط)</option>
+          <option>fill (حشو)</option>
+          <option>zigzag (زجزاج)</option>
+          <option>custom (مخصص)</option>
+        </select>
+      </label>
+
+      <label>ملاحظات إضافية
+        <textarea id="notes" rows="3" placeholder="مثال: قيود الحجم أو ملف مرجعي"></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit">حفظ المعطيات</button>
+        <button type="button" id="downloadJson">تنزيل JSON</button>
+        <button type="button" id="clearBtn">مسح</button>
+      </div>
+    </form>
+
+    <section id="preview">
+      <h2>معاينة بيانات التطريز</h2>
+      <pre id="previewJson">{}</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
